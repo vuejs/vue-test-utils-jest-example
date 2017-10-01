@@ -1,9 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`List.vue matches snapshot 1`] = `
-"<ul data-server-rendered=\\"true\\"><li>
-    item 1
-  </li><li>
-    item 2
-  </li></ul>"
+<ul>
+    <li>
+        item 1
+    </li>
+    <li>
+        item 2
+    </li>
+</ul>
 `;
