@@ -10,7 +10,7 @@ This is based on the `vue-cli` `webpack-simple` template. Test-specific changes 
 - `jest`
 - `babel-jest` (for ES2015+ features in tests)
 - `jest-vue` (for handling `*.vue` files in tests)
-- `jest-vue-serializer` (for snapshot tests)
+- `jest-serializer-vue` (for snapshot tests)
 
 ### Additional Configuration
 
