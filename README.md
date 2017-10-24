@@ -9,7 +9,7 @@ This is based on the `vue-cli` `webpack-simple` template. Test-specific changes 
 - `vue-test-utils`
 - `jest`
 - `babel-jest` (for ES2015+ features in tests)
-- `jest-vue` (for handling `*.vue` files in tests)
+- `vue-jest` (for handling `*.vue` files in tests)
 - `jest-serializer-vue` (for snapshot tests)
 
 ### Additional Configuration
@@ -30,8 +30,8 @@ The following configurations are recommended for Jest:
     "transform": {
       // process js with babel-jest
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      // process *.vue files with jest-vue
-      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue"
+      // process *.vue files with vue-jest
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
     },
     // support the same @ -> src alias mapping in source code
     "moduleNameMapper": {
