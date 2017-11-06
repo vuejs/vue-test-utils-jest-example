@@ -7,9 +7,12 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import MessageToggle from '@/components/MessageToggle.vue'
 import List from '@/components/List.vue'
 import Registration from '@/components/Registration.vue'
+import VueResource from 'vue-resource'
+Vue.use(VueResource);
 
 export default {
   components: {

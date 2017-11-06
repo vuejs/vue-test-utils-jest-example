@@ -1,15 +1,23 @@
 <template>
     <div>
-    <h1>Registration</h1>
-    <vue-form-generator :schema="schema" :model="profile" :options="formOptions" @validated="onValidated"></vue-form-generator>
-        <button id="submit" type="submit" @click.prevent="onSubmit" v-bind:disabled="!submitEnabled">Submit</button>
+        <div v-if="!errorMessage">
+            <h1>Registration</h1>
+            <div v-if="!emailSuccessfullySent">
+                <vue-form-generator :schema="schema" :model="profile" :options="formOptions" @validated="onValidated"></vue-form-generator>
+                <button id="submit" type="submit" @click.prevent="onSubmit" v-bind:disabled="!submitEnabled">Submit</button>
+            </div>
+            <div v-else>
+                Your confirmation email successfully sent. Open your mail '{{profile.email}}' and follow confirmation link.
+            </div>
+        </div>
+        <div v-else>
+            {{errorMessage}}
+        </div>
     </div>
 </template>
 
 <script>
     import Vue from 'vue'
-    import VueResource from 'vue-resource'
-    Vue.use(VueResource);
 
     import VueFormGenerator from "vue-form-generator";
     import "vue-form-generator/dist/vfg.css";
@@ -17,6 +25,7 @@
     const PASSWORD_MIN_LENGTH = 6;
     export default {
         name: 'registration', // component name
+        props: ['onSuccess', 'onFail'],
         data(){
             return {
                 profile: {
@@ -24,8 +33,7 @@
                     email: null,
                     password: null,
                 },
-                submitEnabled: false, // is submit button enabled
-                submitting: false,
+                submitEnabled: false,
                 emailSuccessfullySent: false,
 
                 errorMessage: '',
@@ -72,22 +80,21 @@
         methods: {
             onSubmit() {
                 this.submitEnabled = false;
-                this.submitting = true;
                 this.errorMessage = null;
 
                 this.$http.post('/api/register', this.profile).then(response => {
                     this.submitEnabled = true;
-                    this.submitting = false;
                     this.emailSuccessfullySent = true;
+                    this.onSuccess && this.onSuccess();
                 }, response => {
                     this.submitEnabled = true;
-                    console.error(response);
-                    this.submitting = false;
+                    // console.error(response);
                     this.errorMessage = response.body.message;
+                    this.onFail && this.onFail();
                 });
             },
             onValidated(isValid, errors) {
-                console.log("Validation result: ", isValid, ", Errors:", errors);
+                //console.log("Validation result: ", isValid, ", Errors:", errors);
                 this.submitEnabled = isValid;
                 this.errorMessage = null;
             },
