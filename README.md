@@ -86,3 +86,12 @@ npm test
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-test-utils](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-jest.html).
+
+
+# Debug
+http://facebook.github.io/jest/docs/en/troubleshooting.html
+https://nodejs.org/en/docs/inspector/
+
+0) put `debugger` statement in code
+1) `node --inspect-brk node_modules/.bin/jest --runInBand`
+2) Open in Chrome `chrome://inspect`
