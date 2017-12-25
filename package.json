@@ -37,12 +37,9 @@
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,vue}",
-      "!**/node_modules/**"
-    ],
-    "coverageReporters": [
-      "text",
-      "html"
+      "/src/**/*.{js,vue}",
+      "!/src/App.vue",
+      "!/src/main.js"
     ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
