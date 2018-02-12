@@ -13,6 +13,7 @@
     "vue": "^2.4.4"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.11",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
@@ -26,7 +27,6 @@
     "vue-loader": "^13.0.5",
     "vue-server-renderer": "^2.4.4",
     "vue-template-compiler": "^2.4.4",
-    "vue-test-utils": "^1.0.0-beta.8",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   },
