@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["env", { "modules": false }]
+    [ "env", { "targets": { "browsers": [ "> 1%", "last 2 versions" ] } } ]
   ],
   "env": {
     "test": {
