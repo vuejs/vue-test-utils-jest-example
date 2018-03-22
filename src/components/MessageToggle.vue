@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Message from './Message'
+import Message from '@/components/Message.vue'
 
 export default {
   name: 'message-toggle',
