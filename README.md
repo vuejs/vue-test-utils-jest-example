@@ -85,4 +85,4 @@ npm run build
 npm test
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-test-utils](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-jest.html).
+For detailed explanation on how things work, consult the [docs for vue-test-utils](https://vue-test-utils.vuejs.org/guides/#testing-single-file-components-with-jest).
