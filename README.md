@@ -40,8 +40,7 @@ The following configurations are recommended for Jest:
     // serializer for snapshots
     "snapshotSerializers": [
       "<rootDir>/node_modules/jest-serializer-vue"
-    ],
-    "mapCoverage": true
+    ]
   }
 }
 ```
