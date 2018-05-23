@@ -1,10 +1,10 @@
-import { shallow } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import List from '@/components/List.vue'
 
 describe('List.vue', () => {
   it('renders li for each item in props.items', () => {
-    const items = ['', '']
-    const wrapper = shallow(List, {
+    const items = ['1', '2']
+    const wrapper = shallowMount(List, {
       propsData: { items }
     })
     expect(wrapper.findAll('li')).toHaveLength(items.length)
@@ -12,7 +12,7 @@ describe('List.vue', () => {
 
   it('matches snapshot', () => {
     const items = ['item 1', 'item 2']
-    const wrapper = shallow(List, {
+    const wrapper = shallowMount(List, {
       propsData: { items }
     })
     expect(wrapper.html()).toMatchSnapshot()
