@@ -61,7 +61,7 @@ To apply these options only for tests, we need to add a separate config under `e
   "env": {
     "test": {
       "presets": [
-        ["env", { "targets": { "node": 8 }}]
+        ["env", { "targets": { "node": "current" }}]
       ]
     }
   }
