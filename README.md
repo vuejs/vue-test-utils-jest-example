@@ -1,3 +1,5 @@
+> Note: This example is outdated. It's now recommended to scaffold your project with [Vue CLI 3](https://cli.vuejs.org/) which provides out-of-the-box configurations for unit testing.
+
 # vue-test-utils-jest-example
 
 > Example project using Jest + vue-test-utils together
